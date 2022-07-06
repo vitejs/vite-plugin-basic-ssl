@@ -1,0 +1,11 @@
+{
+  "name": "vite-plugin-basic-ssl-playground",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Example of a basic ssl setup using an automatically generated self-signed certificate",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  }
+}
