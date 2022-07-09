@@ -22,7 +22,6 @@ function viteBasicSslPlugin(): Plugin {
 }
 
 export async function getCertificate(cacheDir: string) {
-  console.log(cacheDir)
   const cachePath = path.join(cacheDir, '_cert.pem')
 
   try {
