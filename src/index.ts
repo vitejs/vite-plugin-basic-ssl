@@ -8,15 +8,13 @@ const defaultCacheDir = 'node_modules/.vite'
 function viteBasicSslPlugin(): Plugin {
   return {
     name: 'vite:basic-ssl',
-    async config(config) {
+    async configResolved(config) {
       const certificate = await getCertificate((config.cacheDir ?? defaultCacheDir) + '/basic-ssl')
       const https = () => ({ 
         https: { cert: certificate, key: certificate }
       })
-      return {
-        server: https(),
-        preview: https()
-      }
+      config.server.https = Object.assign({}, config.server.https, https())
+      config.preview.https = Object.assign({}, config.preview.https, https())
     }
   }
 }
