@@ -2,7 +2,7 @@
 
 A plugin to generate untrusted certificates which still allows to access the page after proceeding a wall with warning.
 
-In most scenarios, it is recommended to generate a secure trusted certificate instead and use it to configure [`server.https`](https://vitejs.dev/config/#server-https)
+In most scenarios, it is recommended to generate a secure trusted certificate instead and use it to configure [`server.https`](https://vitejs.dev/config/server-options.html#server-https)
 
 ## Usage
 
