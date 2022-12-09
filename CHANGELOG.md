@@ -1,3 +1,8 @@
+## [1.0.0](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v0.1.2...v1.0.0) (2022-12-09)
+
+* Support Vite 3 and 4.
+
+
 ## [0.1.2](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v0.1.1...v0.1.2) (2022-08-17)
 
 
