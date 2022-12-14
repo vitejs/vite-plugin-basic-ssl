@@ -49,7 +49,13 @@ Go to `node_modules/.vite/basic-ssl` folder and open `_cert.pem` file in text ed
 
 ### MacOS
 
-WIP
+Go to `node_modules/.vite/basic-ssl` folder and open `_cert.pem` file in text editor:
+- copy to clipboard from `-----BEGIN CERTIFICATE-----` to `-----END CERTIFICATE-----` (including both lines)
+- paste clipboard content into a new one file, save it wherever you want with `.cer` extension
+- open `Keychain Access` app (maybe requires admin password)
+- select `System` on the left panel
+- drag and drop `.cer` file into the `System` panel
+- if you're asked to provide a name and password, type the name and password for an administrator user on your computer
 
 ### Linux
 
