@@ -10,8 +10,12 @@ function viteBasicSslPlugin(): Plugin {
     async configResolved(config) {
       const certificate = await getCertificate((config.cacheDir ?? defaultCacheDir) + '/basic-ssl')
       const https = () => ({ cert: certificate, key: certificate })
-      config.server.https = Object.assign({}, config.server.https, https())
-      config.preview.https = Object.assign({}, config.preview.https, https())
+      if (config.server.https === undefined || !!config.server.https) {
+        config.server.https = Object.assign({}, config.server.https, https())
+      }
+      if (config.preview.https === undefined || !!config.preview.https) {
+        config.preview.https = Object.assign({}, config.preview.https, https())
+      }
     }
   }
 }
