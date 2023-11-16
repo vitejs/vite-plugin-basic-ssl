@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v1.0.1...v1.0.2) (2023-11-16)
+
+
+### Features
+
+* add vite 5 support ([#21](https://github.com/vitejs/vite-plugin-basic-ssl/issues/21)) ([a502eb0](https://github.com/vitejs/vite-plugin-basic-ssl/commit/a502eb002ebf0a910cb7675a6bc838bc7817fbff))
+
+
+
 ## [1.0.1](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v0.1.2...v1.0.1) (2022-12-09)
 
 
