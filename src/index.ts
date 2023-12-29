@@ -3,12 +3,23 @@ import { promises as fsp } from 'node:fs'
 import type { Plugin } from 'vite'
 
 const defaultCacheDir = 'node_modules/.vite'
+const defaultName = 'example.org'
 
-function viteBasicSslPlugin(): Plugin {
+interface Options {
+  certDir: string
+  domains: string[]
+  name: string
+}
+
+function viteBasicSslPlugin(options?: Partial<Options>): Plugin {
   return {
     name: 'vite:basic-ssl',
     async configResolved(config) {
-      const certificate = await getCertificate((config.cacheDir ?? defaultCacheDir) + '/basic-ssl')
+      const certificate = await getCertificate(
+        options?.certDir ?? (config.cacheDir ?? defaultCacheDir) + '/basic-ssl',
+        options?.name ?? defaultName,
+        options?.domains
+      )
       const https = () => ({ cert: certificate, key: certificate })
       config.server.https = Object.assign({}, config.server.https, https())
       config.preview.https = Object.assign({}, config.preview.https, https())
@@ -16,7 +27,11 @@ function viteBasicSslPlugin(): Plugin {
   }
 }
 
-export async function getCertificate(cacheDir: string) {
+export async function getCertificate(
+  cacheDir: string,
+  name: string,
+  domains?: string[]
+) {
   const cachePath = path.join(cacheDir, '_cert.pem')
 
   try {
@@ -31,7 +46,10 @@ export async function getCertificate(cacheDir: string) {
 
     return content
   } catch {
-    const content = (await import('./certificate')).createCertificate()
+    const content = (await import('./certificate')).createCertificate(
+      name,
+      domains
+    )
     fsp
       .mkdir(cacheDir, { recursive: true })
       .then(() => fsp.writeFile(cachePath, content))

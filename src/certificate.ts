@@ -52,15 +52,15 @@ function toPositiveHex(hexString: string) {
   return mostSignificativeHexAsInt.toString() + hexString.substring(1)
 }
 
-export function createCertificate(): string {
+export function createCertificate(name: string, domains?: string[]): string {
   const days = 30
   const keySize = 2048
 
+  const appendDomains = domains
+    ? domains.map(item => ({ type: 2, value: item }))
+    : []
+
   const extensions = [
-    // {
-    //   name: 'basicConstraints',
-    //   cA: true,
-    // },
     {
       name: 'keyUsage',
       keyCertSign: true,
@@ -90,14 +90,6 @@ export function createCertificate(): string {
         },
         {
           type: 2,
-          value: 'lvh.me'
-        },
-        {
-          type: 2,
-          value: '*.lvh.me'
-        },
-        {
-          type: 2,
           value: '[::1]'
         },
         {
@@ -108,7 +100,8 @@ export function createCertificate(): string {
         {
           type: 7,
           ip: 'fe80::1'
-        }
+        },
+        ...appendDomains
       ]
     }
   ]
@@ -116,7 +109,7 @@ export function createCertificate(): string {
   const attrs = [
     {
       name: 'commonName',
-      value: 'example.org'
+      value: name
     },
     {
       name: 'countryName',

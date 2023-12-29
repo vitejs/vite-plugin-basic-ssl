@@ -2,6 +2,7 @@
   "name": "@vitejs/plugin-basic-ssl",
   "version": "1.0.2",
   "license": "MIT",
+  "type": "module",
   "author": "Evan You and Vite Contributors",
   "files": [
     "dist"
