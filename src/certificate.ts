@@ -61,6 +61,10 @@ export function createCertificate(name: string, domains?: string[]): string {
     : []
 
   const extensions = [
+    // {
+    //   name: 'basicConstraints',
+    //   cA: true,
+    // },
     {
       name: 'keyUsage',
       keyCertSign: true,
@@ -87,6 +91,14 @@ export function createCertificate(name: string, domains?: string[]): string {
         {
           type: 2,
           value: 'localhost.localdomain'
+        },
+        {
+          type: 2,
+          value: 'lvh.me'
+        },
+        {
+          type: 2,
+          value: '*.lvh.me'
         },
         {
           type: 2,
