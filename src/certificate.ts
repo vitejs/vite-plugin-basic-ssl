@@ -52,7 +52,7 @@ function toPositiveHex(hexString: string) {
   return mostSignificativeHexAsInt.toString() + hexString.substring(1)
 }
 
-export function createCertificate(name: string, domains?: string[]): string {
+export function createCertificate(name: string = 'example.org', domains?: string[]): string {
   const days = 30
   const keySize = 2048
 

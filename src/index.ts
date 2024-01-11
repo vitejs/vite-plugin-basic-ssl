@@ -3,7 +3,6 @@ import { promises as fsp } from 'node:fs'
 import type { Plugin } from 'vite'
 
 const defaultCacheDir = 'node_modules/.vite'
-const defaultName = 'example.org'
 
 interface Options {
   certDir: string
@@ -17,7 +16,7 @@ function viteBasicSslPlugin(options?: Partial<Options>): Plugin {
     async configResolved(config) {
       const certificate = await getCertificate(
         options?.certDir ?? (config.cacheDir ?? defaultCacheDir) + '/basic-ssl',
-        options?.name ?? defaultName,
+        options?.name,
         options?.domains
       )
       const https = () => ({ cert: certificate, key: certificate })
@@ -29,7 +28,7 @@ function viteBasicSslPlugin(options?: Partial<Options>): Plugin {
 
 export async function getCertificate(
   cacheDir: string,
-  name: string,
+  name?: string,
   domains?: string[]
 ) {
   const cachePath = path.join(cacheDir, '_cert.pem')
