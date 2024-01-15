@@ -1,3 +1,13 @@
+# [1.1.0](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v1.0.2...v1.1.0) (2024-01-15)
+
+
+### Features
+
+* respect user defined settings ([#16](https://github.com/vitejs/vite-plugin-basic-ssl/issues/16)) ([39abca9](https://github.com/vitejs/vite-plugin-basic-ssl/commit/39abca96980d596753d1e0fc68ba1f3c2e32d320))
+* support custom domains ([#22](https://github.com/vitejs/vite-plugin-basic-ssl/issues/22)) ([0a8665f](https://github.com/vitejs/vite-plugin-basic-ssl/commit/0a8665fc5ff5b4e95e93c218bcb5a0b885a3953a))
+
+
+
 ## [1.0.2](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v1.0.1...v1.0.2) (2023-11-16)
 
 
