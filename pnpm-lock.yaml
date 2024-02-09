@@ -8,18 +8,9 @@ importers:
 
   .:
     devDependencies:
-      '@rollup/pluginutils':
-        specifier: ^4.2.1
-        version: 4.2.1
-      '@types/fs-extra':
-        specifier: ^9.0.13
-        version: 9.0.13
       conventional-changelog-cli:
         specifier: ^2.2.2
         version: 2.2.2
-      debug:
-        specifier: ^4.3.4
-        version: 4.3.4
       enquirer:
         specifier: ^2.3.6
         version: 2.3.6
@@ -29,12 +20,6 @@ importers:
       execa:
         specifier: ^4.1.0
         version: 4.1.0
-      fs-extra:
-        specifier: ^10.1.0
-        version: 10.1.0
-      hash-sum:
-        specifier: ^2.0.0
-        version: 2.0.0
       minimist:
         specifier: ^1.2.6
         version: 1.2.6
@@ -53,12 +38,6 @@ importers:
       semver:
         specifier: ^7.3.7
         version: 7.3.7
-      slash:
-        specifier: ^3.0.0
-        version: 3.0.0
-      source-map:
-        specifier: ^0.6.1
-        version: 0.6.1
       unbuild:
         specifier: ^0.7.4
         version: 0.7.4
@@ -748,12 +727,6 @@ packages:
 
   /@types/estree@0.0.52:
     resolution: {integrity: sha512-BZWrtCU0bMVAIliIV+HJO1f1PR41M7NKjfxrFJwwhKI1KwhwOxYw1SXg9ao+CIMt774nFuGiG6eU+udtbEI9oQ==}
-    dev: true
-
-  /@types/fs-extra@9.0.13:
-    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
-    dependencies:
-      '@types/node': 18.0.1
     dev: true
 
   /@types/minimist@1.2.2:
@@ -1565,14 +1538,6 @@ packages:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
-  /fsevents@2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -1723,10 +1688,6 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
-    dev: true
-
-  /hash-sum@2.0.0:
-    resolution: {integrity: sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==}
     dev: true
 
   /hookable@5.1.1:
@@ -2477,7 +2438,7 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /rollup@4.4.1:
@@ -2739,7 +2700,7 @@ packages:
       '@esbuild-kit/core-utils': 2.0.2
       '@esbuild-kit/esm-loader': 2.4.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /type-detect@4.0.8:
@@ -2876,7 +2837,7 @@ packages:
       resolve: 1.22.1
       rollup: 2.75.7
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /vite@5.0.0:
