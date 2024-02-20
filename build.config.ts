@@ -7,6 +7,11 @@ export default defineBuildConfig({
   declaration: 'compatible',
   rollup: {
     emitCJS: true,
-    inlineDependencies: true
+    inlineDependencies: true,
+    output: {
+      generatedCode: {
+        reservedNamesAsProps: false
+      }
+    }
   }
 })
