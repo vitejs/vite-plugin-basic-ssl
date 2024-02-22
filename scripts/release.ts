@@ -1,11 +1,14 @@
-const args = require('minimist')(process.argv.slice(2))
-const fs = require('fs')
-const path = require('path')
-const colors = require('picocolors')
-const semver = require('semver')
-const currentVersion = require('../package.json').version
-const { prompt } = require('enquirer')
-const execa = require('execa')
+import minimist from 'minimist'
+import fs from 'fs'
+import path from 'path'
+import colors from 'picocolors'
+import semver from 'semver'
+import { prompt } from 'enquirer'
+import execa from 'execa'
+
+const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'))
+const currentVersion: string = packageJson.version
+const args = minimist(process.argv.slice(2))
 
 const preId =
   args.preid ||
@@ -30,20 +33,24 @@ const runIfNotDry = isDryRun ? dryRun : run
 const step = msg => console.log(colors.cyan(msg))
 
 async function main() {
-  let targetVersion = args._[0]
+  let targetVersion: string = args._[0]
 
   if (!targetVersion) {
+    const choices = versionIncrements
+      .map(i => `${i} (${inc(i)})`)
+      .concat(['custom'])
+
     // no explicit version, offer suggestions
-    const { release } = await prompt({
+    const { release } = await prompt<{ release: (typeof choices)[number] }>({
       type: 'select',
       name: 'release',
       message: 'Select release type',
-      choices: versionIncrements.map(i => `${i} (${inc(i)})`).concat(['custom'])
+      choices: choices
     })
 
     if (release === 'custom') {
       targetVersion = (
-        await prompt({
+        await prompt<{ version: typeof currentVersion }>({
           type: 'input',
           name: 'version',
           message: 'Input custom version',
@@ -51,7 +58,11 @@ async function main() {
         })
       ).version
     } else {
-      targetVersion = release.match(/\((.*)\)/)[1]
+      const match = release.match(/\((.*)\)/)
+
+      if (match) {
+        targetVersion = match[1]
+      }
     }
   }
 
@@ -59,7 +70,7 @@ async function main() {
     throw new Error(`invalid target version: ${targetVersion}`)
   }
 
-  const { yes } = await prompt({
+  const { yes } = await prompt<{ yes: boolean }>({
     type: 'confirm',
     name: 'yes',
     message: `Releasing v${targetVersion}. Confirm?`
@@ -138,7 +149,7 @@ async function publishPackage(version, runIfNotDry) {
     return
   }
 
-  let releaseTag = null
+  let releaseTag: string | null = null
   if (args.tag) {
     releaseTag = args.tag
   } else if (version.includes('alpha')) {
