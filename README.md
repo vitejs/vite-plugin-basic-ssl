@@ -8,8 +8,9 @@ In most scenarios, it is recommended to generate a secure trusted certificate in
 
 ```js
 // vite.config.js
-import basicSsl from '@vitejs/plugin-basic-ssl'
+import basicSsl from '@vitejs/plugin-basic-ssl';
 
+/** @type {import('vite').UserConfig} */
 export default {
   plugins: [
     basicSsl({
@@ -20,8 +21,10 @@ export default {
       /** custom certification directory */
       certDir: '/Users/.../.devServer/cert'
     })
-  ]
-}
+  ],
+  /** Required in Node.js v20+ */
+  server: { proxy: {} }
+};
 ```
 
 ## License
