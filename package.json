@@ -43,12 +43,12 @@
     "execa": "^8.0.1",
     "minimist": "^1.2.8",
     "node-forge": "^1.3.1",
-    "picocolors": "^1.0.0",
-    "prettier": "^3.2.5",
+    "picocolors": "^1.0.1",
+    "prettier": "^3.3.2",
     "semver": "^7.6.2",
-    "tsx": "^4.10.1",
+    "tsx": "^4.15.2",
     "unbuild": "^2.0.0",
-    "vite": "^5.2.11",
+    "vite": "^5.2.13",
     "vitest": "^1.6.0"
   }
 }
