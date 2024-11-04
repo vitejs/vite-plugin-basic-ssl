@@ -23,7 +23,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "engines": {
-    "node": ">=14.21.3"
+    "node": ">=22.11.0"
   },
   "packageManager": "pnpm@9.12.1",
   "repository": {
