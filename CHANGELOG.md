@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v1.1.0...v1.2.0) (2024-11-27)
+
+
+### Bug Fixes
+
+* update unbuild to 2.0.0, fix type declarations for ESM ([#28](https://github.com/vitejs/vite-plugin-basic-ssl/issues/28)) ([2266824](https://github.com/vitejs/vite-plugin-basic-ssl/commit/2266824312e929041dff6f37e3ed945aeb4e40e9)), closes [#24](https://github.com/vitejs/vite-plugin-basic-ssl/issues/24)
+
+
+### Features
+
+* add vite 6 support ([#55](https://github.com/vitejs/vite-plugin-basic-ssl/issues/55)) ([0dc375d](https://github.com/vitejs/vite-plugin-basic-ssl/commit/0dc375d39827d0681c7bcf92eb5b8a94c4caf57f))
+
+
+
 # [1.1.0](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v1.0.2...v1.1.0) (2024-01-15)
 
 
