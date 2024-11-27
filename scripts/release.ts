@@ -4,7 +4,7 @@ import path from 'path'
 import colors from 'picocolors'
 import semver from 'semver'
 import { prompt } from 'enquirer'
-import execa from 'execa'
+import { execa } from 'execa'
 
 const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'))
 const currentVersion: string = packageJson.version
