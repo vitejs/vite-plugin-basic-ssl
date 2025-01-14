@@ -7,7 +7,7 @@
   "packageRules": [
     {
       "depTypeList": ["peerDependencies"],
-      "enabled": false
-    }
-  ]
+      "enabled": false,
+    },
+  ],
 }

@@ -4,11 +4,9 @@ import basicSsl from '../src/index'
 const config = defineConfig({
   build: {
     sourcemap: true,
-    minify: false
+    minify: false,
   },
-  plugins: [
-    basicSsl()
-  ]
+  plugins: [basicSsl()],
 })
 
 export default config

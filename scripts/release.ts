@@ -21,23 +21,23 @@ const versionIncrements = [
   'patch',
   'minor',
   'major',
-  ...(preId ? ['prepatch', 'preminor', 'premajor', 'prerelease'] : [])
+  ...(preId ? ['prepatch', 'preminor', 'premajor', 'prerelease'] : []),
 ]
 
-const inc = i => semver.inc(currentVersion, i, preId)
+const inc = (i) => semver.inc(currentVersion, i, preId)
 const run = (bin, args, opts = {}) =>
   execa(bin, args, { stdio: 'inherit', ...opts })
 const dryRun = (bin, args, opts = {}) =>
   console.log(colors.blue(`[dryrun] ${bin} ${args.join(' ')}`), opts)
 const runIfNotDry = isDryRun ? dryRun : run
-const step = msg => console.log(colors.cyan(msg))
+const step = (msg) => console.log(colors.cyan(msg))
 
 async function main() {
   let targetVersion: string = args._[0]
 
   if (!targetVersion) {
     const choices = versionIncrements
-      .map(i => `${i} (${inc(i)})`)
+      .map((i) => `${i} (${inc(i)})`)
       .concat(['custom'])
 
     // no explicit version, offer suggestions
@@ -45,7 +45,7 @@ async function main() {
       type: 'select',
       name: 'release',
       message: 'Select release type',
-      choices: choices
+      choices: choices,
     })
 
     if (release === 'custom') {
@@ -54,7 +54,7 @@ async function main() {
           type: 'input',
           name: 'version',
           message: 'Input custom version',
-          initial: currentVersion
+          initial: currentVersion,
         })
       ).version
     } else {
@@ -73,7 +73,7 @@ async function main() {
   const { yes } = await prompt<{ yes: boolean }>({
     type: 'confirm',
     name: 'yes',
-    message: `Releasing v${targetVersion}. Confirm?`
+    message: `Releasing v${targetVersion}. Confirm?`,
   })
 
   if (!yes) {
@@ -168,15 +168,15 @@ async function publishPackage(version, runIfNotDry) {
         'publish',
         ...(releaseTag ? ['--tag', releaseTag] : []),
         '--access',
-        'public'
+        'public',
       ],
       {
         cwd: pkgRoot,
-        stdio: 'pipe'
-      }
+        stdio: 'pipe',
+      },
     )
     console.log(
-      colors.green(`Successfully published ${publishedName}@${version}`)
+      colors.green(`Successfully published ${publishedName}@${version}`),
     )
   } catch (e) {
     if (e.stderr.match(/previously published/)) {
@@ -187,7 +187,7 @@ async function publishPackage(version, runIfNotDry) {
   }
 }
 
-main().catch(err => {
+main().catch((err) => {
   updatePackage(currentVersion)
   console.error(err)
 })

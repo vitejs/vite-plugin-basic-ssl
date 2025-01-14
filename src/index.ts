@@ -17,7 +17,7 @@ function viteBasicSslPlugin(options?: Partial<Options>): Plugin {
       const certificate = await getCertificate(
         options?.certDir ?? (config.cacheDir ?? defaultCacheDir) + '/basic-ssl',
         options?.name,
-        options?.domains
+        options?.domains,
       )
       const https = () => ({ cert: certificate, key: certificate })
       if (config.server.https === undefined || !!config.server.https) {
@@ -26,21 +26,21 @@ function viteBasicSslPlugin(options?: Partial<Options>): Plugin {
       if (config.preview.https === undefined || !!config.preview.https) {
         config.preview.https = Object.assign({}, config.preview.https, https())
       }
-    }
+    },
   }
 }
 
 export async function getCertificate(
   cacheDir: string,
   name?: string,
-  domains?: string[]
+  domains?: string[],
 ) {
   const cachePath = path.join(cacheDir, '_cert.pem')
 
   try {
     const [stat, content] = await Promise.all([
       fsp.stat(cachePath),
-      fsp.readFile(cachePath, 'utf8')
+      fsp.readFile(cachePath, 'utf8'),
     ])
 
     if (Date.now() - stat.ctime.valueOf() > 30 * 24 * 60 * 60 * 1000) {
@@ -51,7 +51,7 @@ export async function getCertificate(
   } catch {
     const content = (await import('./certificate')).createCertificate(
       name,
-      domains
+      domains,
     )
     fsp
       .mkdir(cacheDir, { recursive: true })
