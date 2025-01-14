@@ -8,6 +8,9 @@ export default defineBuildConfig({
   rollup: {
     emitCJS: true,
     inlineDependencies: true,
+    esbuild: {
+      target: 'node14.21.3'
+    },
     output: {
       generatedCode: {
         reservedNamesAsProps: false
