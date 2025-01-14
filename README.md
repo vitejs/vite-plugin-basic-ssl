@@ -18,9 +18,9 @@ export default {
       /** custom trust domains */
       domains: ['*.custom.com'],
       /** custom certification directory */
-      certDir: '/Users/.../.devServer/cert'
-    })
-  ]
+      certDir: '/Users/.../.devServer/cert',
+    }),
+  ],
 }
 ```
 

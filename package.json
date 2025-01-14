@@ -19,6 +19,7 @@
     "dev": "unbuild --stub",
     "build": "unbuild && tsx scripts/patchCJS.ts",
     "test": "vitest run",
+    "format": "prettier --write --cache .",
     "release": "tsx -C import scripts/release.ts",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },

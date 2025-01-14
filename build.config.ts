@@ -9,12 +9,12 @@ export default defineBuildConfig({
     emitCJS: true,
     inlineDependencies: true,
     esbuild: {
-      target: 'node14.21.3'
+      target: 'node14.21.3',
     },
     output: {
       generatedCode: {
-        reservedNamesAsProps: false
-      }
-    }
-  }
+        reservedNamesAsProps: false,
+      },
+    },
+  },
 })
