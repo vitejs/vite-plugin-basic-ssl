@@ -1,3 +1,7 @@
+# [2.0.0](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v1.2.0...v2.0.0) (2025-03-03)
+
+
+
 # [1.2.0](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v1.1.0...v1.2.0) (2024-11-27)
 
 
