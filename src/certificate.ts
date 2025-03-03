@@ -93,10 +93,6 @@ export function createCertificate(
         },
         {
           type: 2,
-          value: 'localhost.localdomain',
-        },
-        {
-          type: 2,
           value: '[::1]',
         },
         {
