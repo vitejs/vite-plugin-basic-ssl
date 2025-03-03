@@ -93,14 +93,6 @@ export function createCertificate(
         },
         {
           type: 2,
-          value: 'lvh.me',
-        },
-        {
-          type: 2,
-          value: '*.lvh.me',
-        },
-        {
-          type: 2,
           value: '[::1]',
         },
         {
