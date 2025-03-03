@@ -1,6 +1,13 @@
 # [2.0.0](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v1.2.0...v2.0.0) (2025-03-03)
 
 
+### Breaking Changes
+
+* only support vite 6+ and node 18+ ([#69](https://github.com/vitejs/vite-plugin-basic-ssl/issues/69)) ([262fc7a](https://github.com/vitejs/vite-plugin-basic-ssl/commit/262fc7ad4694a4a9edd0da9e36b80a46397459b8))
+* remove localhost.localdomain from the certificate ([#68](https://github.com/vitejs/vite-plugin-basic-ssl/issues/68)) ([15f129a](https://github.com/vitejs/vite-plugin-basic-ssl/commit/15f129ad72762f6f6daa9e30ebab55f898885bba))
+* remove lvh.me from the certificate ([#67](https://github.com/vitejs/vite-plugin-basic-ssl/issues/67)) ([59e7d71](https://github.com/vitejs/vite-plugin-basic-ssl/commit/59e7d71e90138c08f782652cf50afeaa4c195e04)), closes [#65](https://github.com/vitejs/vite-plugin-basic-ssl/issues/65)
+
+
 
 # [1.2.0](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v1.1.0...v1.2.0) (2024-11-27)
 
