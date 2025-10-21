@@ -10,4 +10,7 @@
       "enabled": false,
     },
   ],
+  "ignoreDeps": [
+    "node",
+  ],
 }
