@@ -19,7 +19,7 @@ jobs:
       - name: Set node version to 22
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 22.20.0
           cache: "pnpm"
 
       - run: pnpm install
