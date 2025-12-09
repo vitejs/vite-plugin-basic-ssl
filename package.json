@@ -39,7 +39,7 @@
     "vite": "^6.0.0 || ^7.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.19.1",
+    "@types/node": "^24.10.1",
     "conventional-changelog-cli": "^5.0.0",
     "enquirer": "^2.4.1",
     "execa": "^9.6.1",
