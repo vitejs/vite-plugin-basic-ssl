@@ -13,7 +13,7 @@ jobs:
       contents: write # for yyx990803/release-tag to create a release tag
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Create Release for Tag
         id: release_tag
         uses: yyx990803/release-tag@master
