@@ -3,6 +3,13 @@
   "version": "2.1.0",
   "license": "MIT",
   "author": "Evan You and Vite Contributors",
+  "description": "A Vite plugin to generate untrusted certificates for HTTPS dev servers",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "certificate",
+    "https"
+  ],
   "files": [
     "dist"
   ],
