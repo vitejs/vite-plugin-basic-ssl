@@ -1,6 +1,7 @@
 {
   "name": "@vitejs/plugin-basic-ssl",
   "version": "2.1.1",
+  "type": "module",
   "license": "MIT",
   "author": "Evan You and Vite Contributors",
   "description": "A Vite plugin to generate untrusted certificates for HTTPS dev servers",
@@ -27,7 +28,7 @@
     "build": "unbuild && tsx scripts/patchCJS.ts",
     "test": "vitest run",
     "format": "prettier --write --cache .",
-    "release": "tsx -C import scripts/release.ts",
+    "release": "tsx scripts/release.ts",
     "ci-publish": "tsx scripts/publishCI.ts"
   },
   "engines": {

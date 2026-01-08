@@ -10,7 +10,5 @@
       "enabled": false,
     },
   ],
-  "ignoreDeps": [
-    "node",
-  ],
+  "ignoreDeps": ["node"],
 }
