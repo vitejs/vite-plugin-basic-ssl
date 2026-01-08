@@ -1,3 +1,8 @@
+## <small>[2.1.2](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v2.1.1...v2.1.2) (2026-01-08)</small>
+### Miscellaneous Chores
+
+* add `"type": "module"` and fix publishing ([135a6c2](https://github.com/vitejs/vite-plugin-basic-ssl/commit/135a6c2b76de0c217c9276a26d98a44273ae325b))
+
 ## <small>[2.1.1](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v2.1.0...v2.1.1) (2026-01-08)</small>
 ### Miscellaneous Chores
 
