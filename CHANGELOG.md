@@ -1,3 +1,8 @@
+## <small>[2.1.3](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v2.1.2...v2.1.3) (2026-01-08)</small>
+### Continuous Integration
+
+* build file was missing ([c5be1a1](https://github.com/vitejs/vite-plugin-basic-ssl/commit/c5be1a11b0d2b38a2f3275e33e238cd2baa44e72))
+
 ## <small>[2.1.2](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v2.1.1...v2.1.2) (2026-01-08)</small>
 ### Miscellaneous Chores
 
