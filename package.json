@@ -1,6 +1,6 @@
 {
   "name": "@vitejs/plugin-basic-ssl",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "license": "MIT",
   "author": "Evan You and Vite Contributors",
   "description": "A Vite plugin to generate untrusted certificates for HTTPS dev servers",

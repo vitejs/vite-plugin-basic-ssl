@@ -1,3 +1,26 @@
+## <small>[2.1.1](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v2.1.0...v2.1.1) (2026-01-08)</small>
+### Miscellaneous Chores
+
+* add `description` and `keywords` field to package.json ([#90](https://github.com/vitejs/vite-plugin-basic-ssl/issues/90)) ([20a8d50](https://github.com/vitejs/vite-plugin-basic-ssl/commit/20a8d503da087faa7aaa2b98dd9821865867f613))
+* **deps:** update actions/checkout action to v5 ([#77](https://github.com/vitejs/vite-plugin-basic-ssl/issues/77)) ([3bca592](https://github.com/vitejs/vite-plugin-basic-ssl/commit/3bca5921a5b2ed394371037bf58b365af2604120))
+* **deps:** update actions/checkout action to v6 ([#87](https://github.com/vitejs/vite-plugin-basic-ssl/issues/87)) ([481d3d6](https://github.com/vitejs/vite-plugin-basic-ssl/commit/481d3d60e491da089ef6a7c52da7979327b4bacb))
+* **deps:** update actions/setup-node action to v5 ([#79](https://github.com/vitejs/vite-plugin-basic-ssl/issues/79)) ([c07b128](https://github.com/vitejs/vite-plugin-basic-ssl/commit/c07b1282d2e0493bffd97cce48622f8b3fa054d8))
+* **deps:** update actions/setup-node action to v6 ([#81](https://github.com/vitejs/vite-plugin-basic-ssl/issues/81)) ([9dc145c](https://github.com/vitejs/vite-plugin-basic-ssl/commit/9dc145c2d09c49f45cd17f78081d98bc3b46216d))
+* **deps:** update all non-major dependencies ([#75](https://github.com/vitejs/vite-plugin-basic-ssl/issues/75)) ([851240a](https://github.com/vitejs/vite-plugin-basic-ssl/commit/851240aaac27a33a27f01b84344a8b95c2b31383))
+* **deps:** update all non-major dependencies ([#84](https://github.com/vitejs/vite-plugin-basic-ssl/issues/84)) ([5c1d069](https://github.com/vitejs/vite-plugin-basic-ssl/commit/5c1d0695ae230ef17232dce1df6bd4c0f7f272b0))
+* **deps:** update all non-major dependencies ([#89](https://github.com/vitejs/vite-plugin-basic-ssl/issues/89)) ([b6674d5](https://github.com/vitejs/vite-plugin-basic-ssl/commit/b6674d53ee4ed23b9f87ab8ee90a8c7f68bf40bf))
+* **deps:** update dependency @types/node to v24 ([#86](https://github.com/vitejs/vite-plugin-basic-ssl/issues/86)) ([6acab30](https://github.com/vitejs/vite-plugin-basic-ssl/commit/6acab3081eba734a73ab841beb0101c65c60218e))
+* **deps:** update dependency node-forge to v1.3.2 [security] ([#88](https://github.com/vitejs/vite-plugin-basic-ssl/issues/88)) ([415c639](https://github.com/vitejs/vite-plugin-basic-ssl/commit/415c6393a2596172116e6945237aace7c2d0ac2c))
+* **deps:** update dependency vite to v7 ([#76](https://github.com/vitejs/vite-plugin-basic-ssl/issues/76)) ([7e86f46](https://github.com/vitejs/vite-plugin-basic-ssl/commit/7e86f46db202638d66667b1be9bfef5d5e88f995))
+* **deps:** update dependency vite to v7.1.11 [security] ([#80](https://github.com/vitejs/vite-plugin-basic-ssl/issues/80)) ([8c44d82](https://github.com/vitejs/vite-plugin-basic-ssl/commit/8c44d82c8d8dd672c8a95ae09138e4c08b2f4f95))
+* **deps:** update dependency vitest to v4 ([#85](https://github.com/vitejs/vite-plugin-basic-ssl/issues/85)) ([5be25be](https://github.com/vitejs/vite-plugin-basic-ssl/commit/5be25be47a923874e312d284cc4644a7e631079a))
+* fix changelog ([ab7e865](https://github.com/vitejs/vite-plugin-basic-ssl/commit/ab7e865cabc7922ca9984356ed0b8b69466e25ab))
+
+### Continuous Integration
+
+* set permissions ([#78](https://github.com/vitejs/vite-plugin-basic-ssl/issues/78)) ([ed88522](https://github.com/vitejs/vite-plugin-basic-ssl/commit/ed88522e5a33d4092dc7be24beb4a6c858780eef))
+* setup trusted publishing ([#91](https://github.com/vitejs/vite-plugin-basic-ssl/issues/91)) ([fbf459e](https://github.com/vitejs/vite-plugin-basic-ssl/commit/fbf459eb7a47d32b796a1032e2dd47b31d09bb96))
+
 # [2.1.0](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v2.0.0...v2.1.0) (2025-07-01)
 
 
