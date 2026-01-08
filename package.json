@@ -28,6 +28,7 @@
     "build": "unbuild && tsx scripts/patchCJS.ts",
     "test": "vitest run",
     "format": "prettier --write --cache .",
+    "prepublishOnly": "npm run build",
     "release": "tsx scripts/release.ts",
     "ci-publish": "tsx scripts/publishCI.ts"
   },
