@@ -1,3 +1,9 @@
+## <small>[2.1.4](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v2.1.3...v2.1.4) (2026-01-20)</small>
+### Miscellaneous Chores
+
+* add metadata for vite-plugin-registry ([#93](https://github.com/vitejs/vite-plugin-basic-ssl/issues/93)) ([c0cd669](https://github.com/vitejs/vite-plugin-basic-ssl/commit/c0cd669d0e37e2ae2580aaa8815b6761f13706d4))
+* **deps:** update all non-major dependencies ([#92](https://github.com/vitejs/vite-plugin-basic-ssl/issues/92)) ([2c68bf6](https://github.com/vitejs/vite-plugin-basic-ssl/commit/2c68bf636847f60e4a8cada090ae59ced56ee064))
+
 ## <small>[2.1.3](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v2.1.2...v2.1.3) (2026-01-08)</small>
 ### Continuous Integration
 
