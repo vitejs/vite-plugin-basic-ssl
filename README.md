@@ -17,6 +17,8 @@ export default {
       name: 'test',
       /** custom trust domains */
       domains: ['*.custom.com'],
+      /** optional, days before certificate expires */
+      ttlDays: 30,
       /** custom certification directory */
       certDir: '/Users/.../.devServer/cert',
     }),

@@ -8,6 +8,7 @@ interface Options {
   certDir: string
   domains: string[]
   name: string
+  ttlDays: number
 }
 
 function viteBasicSslPlugin(options?: Partial<Options>): Plugin {
@@ -18,6 +19,7 @@ function viteBasicSslPlugin(options?: Partial<Options>): Plugin {
         options?.certDir ?? (config.cacheDir ?? defaultCacheDir) + '/basic-ssl',
         options?.name,
         options?.domains,
+        options?.ttlDays,
       )
       const https = () => ({ cert: certificate, key: certificate })
       if (config.server.https === undefined || !!config.server.https) {
@@ -34,6 +36,7 @@ export async function getCertificate(
   cacheDir: string,
   name?: string,
   domains?: string[],
+  ttlDays?: number,
 ) {
   const cachePath = path.join(cacheDir, '_cert.pem')
 
@@ -52,6 +55,7 @@ export async function getCertificate(
     const content = (await import('./certificate')).createCertificate(
       name,
       domains,
+      ttlDays,
     )
     fsp
       .mkdir(cacheDir, { recursive: true })
