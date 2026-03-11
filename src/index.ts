@@ -2,6 +2,10 @@ import path from 'node:path'
 import { promises as fsp } from 'node:fs'
 import type { Plugin } from 'vite'
 
+// @ts-ignore
+import forge from 'node-forge/lib/forge'
+import 'node-forge/lib/pki'
+
 const defaultCacheDir = 'node_modules/.vite'
 
 interface Options {
@@ -41,13 +45,18 @@ export async function getCertificate(
   const cachePath = path.join(cacheDir, '_cert.pem')
 
   try {
-    const [stat, content] = await Promise.all([
-      fsp.stat(cachePath),
-      fsp.readFile(cachePath, 'utf8'),
-    ])
+    const content = await fsp.readFile(cachePath, "utf8")
+    const certContent = content.match(
+      /-----BEGIN CERTIFICATE-----[\s\S]+-----END CERTIFICATE-----/,
+    )
+    if (!certContent) {
+      throw new Error("certificate not detected.")
+    }
 
-    if (Date.now() - stat.ctime.valueOf() > 30 * 24 * 60 * 60 * 1000) {
-      throw new Error('cache is outdated.')
+    const cert = forge.pki.certificateFromPem(certContent[0])
+
+    if (new Date() > cert.validity.notAfter) {
+      throw new Error("cache is outdated.")
     }
 
     return content
