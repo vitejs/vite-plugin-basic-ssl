@@ -45,18 +45,18 @@ export async function getCertificate(
   const cachePath = path.join(cacheDir, '_cert.pem')
 
   try {
-    const content = await fsp.readFile(cachePath, "utf8")
+    const content = await fsp.readFile(cachePath, 'utf8')
     const certContent = content.match(
       /-----BEGIN CERTIFICATE-----[\s\S]+-----END CERTIFICATE-----/,
     )
     if (!certContent) {
-      throw new Error("certificate not detected.")
+      throw new Error('certificate not detected.')
     }
 
     const cert = forge.pki.certificateFromPem(certContent[0])
 
     if (new Date() > cert.validity.notAfter) {
-      throw new Error("cache is outdated.")
+      throw new Error('cache is outdated.')
     }
 
     return content
