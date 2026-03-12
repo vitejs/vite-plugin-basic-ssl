@@ -1,6 +1,7 @@
 import path from 'node:path'
 import { promises as fsp } from 'node:fs'
 import type { Plugin } from 'vite'
+import { isCertificateExpired } from './certificate-expiration'
 
 const defaultCacheDir = 'node_modules/.vite'
 
@@ -8,6 +9,7 @@ interface Options {
   certDir: string
   domains: string[]
   name: string
+  ttlDays: number
 }
 
 function viteBasicSslPlugin(options?: Partial<Options>): Plugin {
@@ -18,6 +20,7 @@ function viteBasicSslPlugin(options?: Partial<Options>): Plugin {
         options?.certDir ?? (config.cacheDir ?? defaultCacheDir) + '/basic-ssl',
         options?.name,
         options?.domains,
+        options?.ttlDays,
       )
       const https = () => ({ cert: certificate, key: certificate })
       if (config.server.https === undefined || !!config.server.https) {
@@ -34,16 +37,15 @@ export async function getCertificate(
   cacheDir: string,
   name?: string,
   domains?: string[],
+  ttlDays?: number,
 ) {
   const cachePath = path.join(cacheDir, '_cert.pem')
 
   try {
-    const [stat, content] = await Promise.all([
-      fsp.stat(cachePath),
-      fsp.readFile(cachePath, 'utf8'),
-    ])
+    const content = await fsp.readFile(cachePath, 'utf8')
+    const isExpired = isCertificateExpired(content)
 
-    if (Date.now() - stat.ctime.valueOf() > 30 * 24 * 60 * 60 * 1000) {
+    if (isExpired) {
       throw new Error('cache is outdated.')
     }
 
@@ -52,6 +54,7 @@ export async function getCertificate(
     const content = (await import('./certificate')).createCertificate(
       name,
       domains,
+      ttlDays,
     )
     fsp
       .mkdir(cacheDir, { recursive: true })

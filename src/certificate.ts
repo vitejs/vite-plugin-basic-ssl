@@ -55,8 +55,8 @@ function toPositiveHex(hexString: string) {
 export function createCertificate(
   name: string = 'example.org',
   domains?: string[],
+  ttlDays = 30,
 ): string {
-  const days = 30
   const keySize = 2048
 
   const appendDomains = domains
@@ -146,7 +146,7 @@ export function createCertificate(
 
   cert.validity.notBefore = new Date()
   cert.validity.notAfter = new Date()
-  cert.validity.notAfter.setDate(cert.validity.notBefore.getDate() + days)
+  cert.validity.notAfter.setDate(cert.validity.notBefore.getDate() + ttlDays)
 
   cert.setSubject(attrs)
   cert.setIssuer(attrs)
