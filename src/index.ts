@@ -1,10 +1,7 @@
 import path from 'node:path'
+import { X509Certificate } from 'node:crypto'
 import { promises as fsp } from 'node:fs'
 import type { Plugin } from 'vite'
-
-// @ts-ignore
-import forge from 'node-forge/lib/forge'
-import 'node-forge/lib/pki'
 
 const defaultCacheDir = 'node_modules/.vite'
 
@@ -46,17 +43,13 @@ export async function getCertificate(
 
   try {
     const content = await fsp.readFile(cachePath, 'utf8')
-    const certContent = content.match(
-      /-----BEGIN CERTIFICATE-----[\s\S]+-----END CERTIFICATE-----/,
-    )
-    if (!certContent) {
-      throw new Error('certificate not detected.')
-    }
+    const cert = new X509Certificate(content);
 
-    const cert = forge.pki.certificateFromPem(certContent[0])
-
-    if (new Date() > cert.validity.notAfter) {
-      throw new Error('cache is outdated.')
+    // validTo is a nonstandard format, but it successfully parses. validToDate
+    // is not available until node 22
+    // https://github.com/nodejs/node/issues/52931
+    if (Date.now() > Date.parse(cert.validTo)) {
+      throw new Error('cache is outdated.');
     }
 
     return content
