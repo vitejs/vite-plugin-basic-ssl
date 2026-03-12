@@ -1,7 +1,7 @@
 import path from 'node:path'
-import { X509Certificate } from 'node:crypto'
 import { promises as fsp } from 'node:fs'
 import type { Plugin } from 'vite'
+import { isCertificateExpired } from './certificate-expiration'
 
 const defaultCacheDir = 'node_modules/.vite'
 
@@ -43,13 +43,10 @@ export async function getCertificate(
 
   try {
     const content = await fsp.readFile(cachePath, 'utf8')
-    const cert = new X509Certificate(content);
+    const isExpired = isCertificateExpired(content)
 
-    // validTo is a nonstandard format, but it successfully parses. validToDate
-    // is not available until node 22
-    // https://github.com/nodejs/node/issues/52931
-    if (Date.now() > Date.parse(cert.validTo)) {
-      throw new Error('cache is outdated.');
+    if (isExpired) {
+      throw new Error('cache is outdated.')
     }
 
     return content
