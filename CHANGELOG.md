@@ -1,3 +1,12 @@
+## [2.2.0](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v2.1.4...v2.2.0) (2026-03-12)
+### Features
+
+* add Vite v8 to peer dependency ([dfe789d](https://github.com/vitejs/vite-plugin-basic-ssl/commit/dfe789d68eb15801e3c7de671b4286e21371fb01))
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major dependencies ([#94](https://github.com/vitejs/vite-plugin-basic-ssl/issues/94)) ([3b57894](https://github.com/vitejs/vite-plugin-basic-ssl/commit/3b57894c9ff29ef884bcb369d84c72c226bd9d25))
+
 ## <small>[2.1.4](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v2.1.3...v2.1.4) (2026-01-20)</small>
 ### Miscellaneous Chores
 
