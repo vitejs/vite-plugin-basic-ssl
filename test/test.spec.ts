@@ -1,7 +1,10 @@
 import { beforeEach, describe, test, expect, vi, Mock } from 'vitest'
 import { X509Certificate } from 'node:crypto'
 import { createCertificate } from '../src/certificate'
-import { isCertificateExpired } from '../src/certificate-expiration'
+import {
+  isCertificateExpired,
+  parseNonStandardDateString,
+} from '../src/certificate-expiration'
 
 test('create certificate', () => {
   const content = createCertificate()
@@ -31,7 +34,7 @@ describe('isCertificateExpired', () => {
       expect(isExpired).toBe(false)
     })
 
-     test('returns true', () => {
+    test('returns true', () => {
       validToDateMock.mockReturnValue(new Date(Date.now() - 10000))
 
       const content = createCertificate()
@@ -49,7 +52,7 @@ describe('isCertificateExpired', () => {
       const isExpired = isCertificateExpired(content)
       expect(isExpired).toBe(false)
     })
-    
+
     test('returns true', () => {
       validToDateMock.mockReturnValue(undefined)
       validToMock.mockReturnValue('Jan 22 08:20:44 2022 GMT')
@@ -59,4 +62,15 @@ describe('isCertificateExpired', () => {
       expect(isExpired).toBe(true)
     })
   })
+})
+
+test('parseNonStandardDateString', () => {
+  const content = createCertificate()
+  const cert = new X509Certificate(content)
+  const date = parseNonStandardDateString(cert.validTo)
+  expect(date).toBeInstanceOf(Date)
+  expect(date.getTime()).toBeGreaterThan(0)
+  if (cert.validToDate) {
+    expect(date.getTime()).toBe(cert.validToDate.getTime())
+  }
 })

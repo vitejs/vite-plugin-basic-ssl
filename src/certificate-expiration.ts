@@ -27,11 +27,13 @@ function getCertificateExpirationDate(cert: X509Certificate): Date {
     return cert.validToDate
   }
 
-  // validTo is a nonstandard format: %s %2d %02d:%02d:%02d %d%s GMT
-  // https://github.com/nodejs/node/issues/52931
-  const [month, day, time, year] = cert.validTo
-    .split(' ')
-    .filter((part) => !!part)
+  return parseNonStandardDateString(cert.validTo)
+}
+
+// validTo is a nonstandard format: %s %2d %02d:%02d:%02d %d%s GMT
+// https://github.com/nodejs/node/issues/52931
+export function parseNonStandardDateString(str: string): Date {
+  const [month, day, time, year] = str.split(' ').filter((part) => !!part)
   // convert string month to number
   const monthIndex = MONTHS.indexOf(month) + 1
   return new Date(
