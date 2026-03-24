@@ -1,3 +1,19 @@
+## [2.3.0](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v2.2.0...v2.3.0) (2026-03-24)
+### Features
+
+* add optional `ttlDays` parameter ([#98](https://github.com/vitejs/vite-plugin-basic-ssl/issues/98)) ([eb373f0](https://github.com/vitejs/vite-plugin-basic-ssl/commit/eb373f09ae18e494597f9b5c1c1502608a60599d))
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major dependencies ([#100](https://github.com/vitejs/vite-plugin-basic-ssl/issues/100)) ([34ef8a0](https://github.com/vitejs/vite-plugin-basic-ssl/commit/34ef8a093fac21d32de981c98beb98d04ca34b0a))
+* **deps:** update all non-major dependencies ([#96](https://github.com/vitejs/vite-plugin-basic-ssl/issues/96)) ([acb0779](https://github.com/vitejs/vite-plugin-basic-ssl/commit/acb07794dd87a490d7444b02ef3e761c921af4d8))
+* **deps:** update dependency vite to v8 ([#99](https://github.com/vitejs/vite-plugin-basic-ssl/issues/99)) ([987fb1a](https://github.com/vitejs/vite-plugin-basic-ssl/commit/987fb1a9fb91eb5775fd1a2d936a9a10c9d6325d))
+* **deps:** update pnpm/action-setup action to v5 ([#101](https://github.com/vitejs/vite-plugin-basic-ssl/issues/101)) ([4b9d639](https://github.com/vitejs/vite-plugin-basic-ssl/commit/4b9d639641cdc53d6fe78fe792a49122dac00fe6))
+
+### Build System
+
+* refactor post-build code ([#102](https://github.com/vitejs/vite-plugin-basic-ssl/issues/102)) ([2499cce](https://github.com/vitejs/vite-plugin-basic-ssl/commit/2499ccedda872154cb2a41f76cbe2cb350fd8f93))
+
 ## [2.2.0](https://github.com/vitejs/vite-plugin-basic-ssl/compare/v2.1.4...v2.2.0) (2026-03-12)
 ### Features
 
