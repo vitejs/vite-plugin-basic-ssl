@@ -25,7 +25,7 @@
   },
   "scripts": {
     "dev": "unbuild --stub",
-    "build": "unbuild && tsx scripts/patchCJS.ts",
+    "build": "unbuild",
     "test": "vitest run",
     "format": "prettier --write --cache .",
     "prepublishOnly": "npm run build",
