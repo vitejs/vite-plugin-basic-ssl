@@ -30,11 +30,11 @@ importers:
         specifier: ^4.21.0
         version: 4.21.0
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.2
+        version: 6.0.2
       unbuild:
         specifier: ^3.6.1
-        version: 3.6.1(typescript@5.9.3)
+        version: 3.6.1(typescript@6.0.2)
       vite:
         specifier: ^8.0.2
         version: 8.0.2(@types/node@24.12.0)(esbuild@0.27.1)(jiti@2.6.1)(tsx@4.21.0)
@@ -1650,8 +1650,8 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.2:
+    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2753,7 +2753,7 @@ snapshots:
 
   minimist@1.2.8: {}
 
-  mkdist@2.4.1(typescript@5.9.3):
+  mkdist@2.4.1(typescript@6.0.2):
     dependencies:
       autoprefixer: 10.4.21(postcss@8.5.8)
       citty: 0.1.6
@@ -2769,7 +2769,7 @@ snapshots:
       semver: 7.7.3
       tinyglobby: 0.2.15
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.2
 
   mlly@1.7.4:
     dependencies:
@@ -3068,11 +3068,11 @@ snapshots:
       '@rolldown/binding-win32-arm64-msvc': 1.0.0-rc.11
       '@rolldown/binding-win32-x64-msvc': 1.0.0-rc.11
 
-  rollup-plugin-dts@6.2.3(rollup@4.52.5)(typescript@5.9.3):
+  rollup-plugin-dts@6.2.3(rollup@4.52.5)(typescript@6.0.2):
     dependencies:
       magic-string: 0.30.21
       rollup: 4.52.5
-      typescript: 5.9.3
+      typescript: 6.0.2
     optionalDependencies:
       '@babel/code-frame': 7.27.1
 
@@ -3191,7 +3191,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  typescript@5.9.3: {}
+  typescript@6.0.2: {}
 
   ufo@1.5.4: {}
 
@@ -3200,7 +3200,7 @@ snapshots:
   uglify-js@3.19.3:
     optional: true
 
-  unbuild@3.6.1(typescript@5.9.3):
+  unbuild@3.6.1(typescript@6.0.2):
     dependencies:
       '@rollup/plugin-alias': 5.1.1(rollup@4.52.5)
       '@rollup/plugin-commonjs': 28.0.8(rollup@4.52.5)
@@ -3216,18 +3216,18 @@ snapshots:
       hookable: 5.5.3
       jiti: 2.6.1
       magic-string: 0.30.17
-      mkdist: 2.4.1(typescript@5.9.3)
+      mkdist: 2.4.1(typescript@6.0.2)
       mlly: 1.7.4
       pathe: 2.0.3
       pkg-types: 2.3.0
       pretty-bytes: 7.1.0
       rollup: 4.52.5
-      rollup-plugin-dts: 6.2.3(rollup@4.52.5)(typescript@5.9.3)
+      rollup-plugin-dts: 6.2.3(rollup@4.52.5)(typescript@6.0.2)
       scule: 1.3.0
       tinyglobby: 0.2.15
       untyped: 2.0.0
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.2
     transitivePeerDependencies:
       - sass
       - vue

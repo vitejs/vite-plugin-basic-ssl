@@ -55,7 +55,7 @@
     "picocolors": "^1.1.1",
     "prettier": "^3.8.1",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.2",
     "unbuild": "^3.6.1",
     "vite": "^8.0.2",
     "vitest": "^4.1.1"
