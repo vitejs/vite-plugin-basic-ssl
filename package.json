@@ -35,7 +35,7 @@
   "engines": {
     "node": "^18.0.0 || ^20.0.0 || >=22.0.0"
   },
-  "packageManager": "pnpm@10.34.4",
+  "packageManager": "pnpm@10.34.5",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vitejs/vite-plugin-basic-ssl.git"
@@ -48,17 +48,17 @@
     "vite": "^6.0.0 || ^7.0.0 || ^8.0.0"
   },
   "devDependencies": {
-    "@types/node": "^24.13.2",
-    "@vitejs/release-scripts": "^1.7.1",
+    "@types/node": "^24.13.3",
+    "@vitejs/release-scripts": "^1.8.0",
     "execa": "^9.6.1",
     "node-forge": "^1.4.0",
     "picocolors": "^1.1.1",
-    "prettier": "^3.9.4",
-    "tsx": "^4.22.4",
+    "prettier": "^3.9.6",
+    "tsx": "^4.23.1",
     "typescript": "^6.0.3",
     "unbuild": "^3.6.1",
-    "vite": "^8.1.2",
-    "vitest": "^4.1.9"
+    "vite": "^8.1.5",
+    "vitest": "^4.1.10"
   },
   "compatiblePackages": {
     "schemaVersion": 1,
