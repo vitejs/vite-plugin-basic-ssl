@@ -48,16 +48,16 @@
     "vite": "^6.0.0 || ^7.0.0 || ^8.0.0"
   },
   "devDependencies": {
-    "@types/node": "^24.13.3",
-    "@vitejs/release-scripts": "^1.9.2",
+    "@types/node": "^24.13.4",
+    "@vitejs/release-scripts": "^1.10.0",
     "execa": "^9.6.1",
     "node-forge": "^1.4.0",
     "picocolors": "^1.1.1",
     "prettier": "^3.9.6",
-    "tsx": "^4.23.12",
+    "tsx": "^4.23.13",
     "typescript": "^6.0.3",
     "unbuild": "^3.6.1",
-    "vite": "^8.2.2",
+    "vite": "^8.3.0",
     "vitest": "^4.1.11"
   },
   "compatiblePackages": {
