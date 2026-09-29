@@ -48,7 +48,7 @@
     "vite": "^6.0.0 || ^7.0.0 || ^8.0.0"
   },
   "devDependencies": {
-    "@types/node": "^24.13.6",
+    "@types/node": "^24.19.0",
     "@vitejs/release-scripts": "^1.10.0",
     "execa": "^10.0.1",
     "node-forge": "^1.4.0",
@@ -58,7 +58,7 @@
     "typescript": "^7.0.2",
     "unbuild": "^3.6.1",
     "vite": "^8.3.1",
-    "vitest": "^5.0.1"
+    "vitest": "^5.0.2"
   },
   "compatiblePackages": {
     "schemaVersion": 1,
