@@ -48,7 +48,7 @@
     "vite": "^6.0.0 || ^7.0.0 || ^8.0.0"
   },
   "devDependencies": {
-    "@types/node": "^24.19.0",
+    "@types/node": "^26.6.6",
     "@vitejs/release-scripts": "^1.10.0",
     "execa": "^10.0.1",
     "node-forge": "^1.4.0",
